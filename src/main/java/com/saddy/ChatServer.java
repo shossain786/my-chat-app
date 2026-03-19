@@ -16,9 +16,9 @@ public class ChatServer {
         ServerSocket server = new ServerSocket(1234);
         IO.println("############# Server Started! #############");
         while (true) {
-            Socket client = server.accept();
-            IO.println("Client connected: " + client.getInetAddress().getHostName());
-            new Thread(new ClientHandler(client)).start();
+            Socket socket = server.accept();
+            IO.println("Client connected: " + socket.getInetAddress().getHostName());
+            new Thread(new ClientHandler(socket)).start();
         }
     }
 
