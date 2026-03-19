@@ -17,6 +17,12 @@ public class ChatClient {
 //        to send message to server
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
+//        Send server message(Enter Username)
+        IO.println(serverInput.readLine());
+
+//        Send Username
+        out.println(input.readLine());
+
         // Thread to listen messages
         new Thread(() -> {
             try {
